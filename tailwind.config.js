@@ -17,12 +17,13 @@ module.exports = {
         "xl" : "1280px",
         "lg" : "1024px",
         "md" : "768px",
-        "sm" : "425px",
+        
       },
     },
     extend: {
       screens:{
-        "ssm" : "320px"
+        "ssm" : "320px",
+        "sm" : "425px",
       },
       colors: {
         border: "hsl(var(--border))",
