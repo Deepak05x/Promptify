@@ -8,6 +8,7 @@ import { SessionContext } from "@/context/SessionProvider";
 import { IoIosMenu, IoIosClose } from "react-icons/io";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = () => {
     const { session, handleLogOut } = useContext(SessionContext);
@@ -19,13 +20,16 @@ const Navbar = () => {
 
     return (
         <section className="flex items-center justify-between lg:px-[3rem] sm:px-[2rem] ssm:px-[2rem]  py-[2rem]">
-            <div className="flex items-center gap-4">
+            <Link href={"/"} className="flex items-center gap-4">
                 <Image src={"/logo.svg"} alt="logo" width={40} height={40} priority />
                 <h1 className="text-2xl tracking-wide sm:flex ssm:hidden font-medium">Promptify</h1>
-            </div>
+            </Link>
             {session ? (
                 <div className="hidden items-center gap-8  md:flex">
-                    <Button className="text-lg p-4 rounded-full">Create Post</Button>
+                    <Link href={"/create"}>
+                        <Button className="text-lg p-4 rounded-full">Create Post</Button>
+                    </Link>
+
                     <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full">
                         Sign out
                     </Button>
@@ -51,7 +55,9 @@ const Navbar = () => {
                         <IoIosClose className="text-6xl " onClick={() => toggleMenu()} />
                         {session ? (
                             <div className="md:hidden items-center gap-12 flex-col  flex">
-                                <Button className="text-lg p-4 rounded-full">Create Post</Button>
+                                <Link href={"/create"}>
+                                    <Button className="text-lg p-4 rounded-full">Create Post</Button>
+                                </Link>
                                 <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full">
                                     Sign out
                                 </Button>

@@ -64,10 +64,6 @@
     @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent
   }
 
-  .background_gradient{
-    @apply bg-gradient-to-b from-green-50  via-purple-50 to-blue-50 
-  }
-
  
 
 }

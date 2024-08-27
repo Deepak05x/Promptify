@@ -1,6 +1,8 @@
 import React from "react";
-import Title from "@/components/Homepage/Title";
-import Form from "@/components/Homepage/Form";
+import dynamic from "next/dynamic";
+
+const Title = dynamic(() => import("@/components/Homepage/Title"));
+const Form = dynamic(() => import("@/components/Homepage/Form"));
 
 const Home = () => {
     return (
