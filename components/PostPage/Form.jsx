@@ -16,7 +16,7 @@ const Form = () => {
                 <label htmlFor="tag" className="text-xl font-medium">
                     Tag
                 </label>
-                <Input id="tag" placeholder="Enter Your Tag" className="lg:max-w-[50vw] md:max-w-[60vw] sm:max-w-[70vw] ssm:max-w-[80vw] border-gray-600" />
+                <Input id="tag" placeholder="Enter Your Tag" className=" text-md lg:max-w-[50vw] md:max-w-[60vw] sm:max-w-[70vw] ssm:max-w-[80vw] border-gray-600" />
             </div>
             <Button className="text-xl rounded-full">Submit</Button>
         </form>
