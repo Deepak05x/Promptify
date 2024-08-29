@@ -6,7 +6,7 @@ const Form = dynamic(() => import("@/components/PostPage/Form.jsx"));
 
 const Create = () => {
     return (
-        <section className="flex flex-col items-center w-full justify-center h-full py-12 gap-16">
+        <section className="flex flex-col items-center w-full justify-center h-full py-12 gap-8">
             <Title />
             <Form />
         </section>

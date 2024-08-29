@@ -5,18 +5,15 @@ import { Button } from "../ui/button";
 
 const Form = () => {
     return (
-        <form
-            action=""
-            className="w-full flex flex-col items-center justify-center bg-gray-100 rounded-sm xl:max-w-[50vw] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] ssm:max-w-[90vw] p-12 gap-12"
-        >
+        <form action="" className="w-full flex flex-col items-center  justify-center rounded-sm xl:max-w-[50vw] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] ssm:max-w-[90vw] p-12 gap-12">
             <div className="flex flex-col items-start w-full gap-4">
-                <label htmlFor="prompt" className="text-xl font-medium">
+                <label htmlFor="prompt" className="text-lg">
                     Your AI Prompt
                 </label>
                 <Textarea id="prompt" placeholder="Share Your Prompts" className="xl:max-w-[50vw] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] ssm:max-w-[90vw] border-gray-600" />
             </div>
             <div className="flex flex-col items-start w-full gap-4">
-                <label htmlFor="tag" className="text-xl font-medium">
+                <label htmlFor="tag" className="text-lg">
                     Tag
                 </label>
                 <Input id="tag" placeholder="Enter Your Tag" className=" text-md xl:max-w-[50vw] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] ssm:max-w-[90vw] border-gray-600" />
