@@ -8,7 +8,7 @@ const Card = () => {
                 <h1 className="text-xl font-medium  cursor-pointer underline-offset-2">Deepak</h1>
                 <Image src={"/logo.svg"} alt="dummy" width={25} height={25} className="cursor-pointer" />
             </div>
-            <h2 className="max-w-[50vw] text-start text-black/60">
+            <h2 className=" text-start text-black/60">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium numquam dolorem, deleniti vitae laboriosam voluptas unde nulla eius sapiente odit, iure molestiae repellat
                 quae cumque amet consequatur velit distinctio.
             </h2>
