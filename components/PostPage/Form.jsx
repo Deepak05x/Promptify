@@ -1,20 +1,43 @@
 "use client";
 
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-import { useState } from "react";
+import { SessionContext } from "@/context/SessionProvider";
+import { useRouter } from "next/navigation";
 
 const Form = () => {
+    const router = useRouter();
+
+    const { session } = useContext(SessionContext);
+
     const [post, setPost] = useState({
         prompt: "",
         tag: "",
     });
 
-    console.log(post);
-
-    const handleSubmit = () => {};
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!post.prompt || !post.tag) {
+            alert("The Prompt and the Tag cannot be empty");
+        }
+        try {
+            const response = await fetch("/api/post", {
+                method: "POST",
+                body: JSON.stringify({
+                    prompt: post.prompt,
+                    tag: post.tag,
+                    user: session?.user.id,
+                }),
+            });
+            if (response.ok) {
+                router.push("/");
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
     return (
         <form
