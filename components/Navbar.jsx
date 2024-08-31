@@ -30,14 +30,23 @@ const Navbar = () => {
                         <Button className="text-lg p-4 rounded-full">Create Post</Button>
                     </Link>
 
-                    <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full">
+                    <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 bg-white/50 rounded-full">
                         Sign out
                     </Button>
-                    <Image src={session?.user?.image || "/logo.svg"} alt="profile" width={50} height={50} priority className="rounded-full" />
+                    <Link href={"/profile"}>
+                        <Image
+                            src={session?.user?.image || "/logo.svg"}
+                            alt="profile"
+                            width={50}
+                            height={50}
+                            priority
+                            className="rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out"
+                        />
+                    </Link>
                 </div>
             ) : (
                 <form action={doLogin} className="hidden md:flex">
-                    <Button name="action" value="google" type="submit" variant="outline" className="text-lg p-4 rounded-full">
+                    <Button name="action" value="google" type="submit" variant="outline" className="text-lg bg-white/50 p-4 rounded-full">
                         Sign In
                     </Button>
                 </form>
@@ -50,7 +59,7 @@ const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 150 }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="absolute bg-gray-300 flex flex-col items-center py-24 gap-12  ssm:w-[100vw] sm:w-[50vw] h-[100%] top-0 right-0"
+                        className="absolute bg-white flex flex-col items-center py-24 gap-12  ssm:w-[100vw] sm:w-[50vw] h-[100%] top-0 right-0"
                     >
                         <IoIosClose className="text-6xl " onClick={() => toggleMenu()} />
                         {session ? (
@@ -58,14 +67,14 @@ const Navbar = () => {
                                 <Link href={"/create"}>
                                     <Button className="text-lg p-4 rounded-full">Create Post</Button>
                                 </Link>
-                                <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full">
+                                <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full bg-white/50">
                                     Sign out
                                 </Button>
                                 <Image src={session?.user?.image || "/logo.svg"} alt="profile" width={50} height={50} priority className="rounded-full" />
                             </div>
                         ) : (
                             <form action={doLogin} className="md:hidden flex">
-                                <Button name="action" value="google" type="submit" variant="outline" className="text-lg p-4 rounded-full">
+                                <Button name="action" value="google" type="submit" variant="outline" className="text-lg p-4 rounded-full bg-white/50">
                                     Sign In
                                 </Button>
                             </form>
