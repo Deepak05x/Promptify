@@ -1,7 +1,7 @@
 import connectToDb from "@/lib/db"
 import Post from "@/models/PostModel"
 
-export const GET = async(req,res)=>{
+export const GET = async()=>{
     try {
         await connectToDb()
         const response = await Post.find({}).populate("user")
