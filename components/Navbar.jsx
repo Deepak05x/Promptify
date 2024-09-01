@@ -9,17 +9,27 @@ import { IoIosMenu, IoIosClose } from "react-icons/io";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
     const { session, handleLogOut } = useContext(SessionContext);
     const [menu, setMenu] = useState(false);
+
+    const pathname = usePathname();
 
     const toggleMenu = () => {
         setMenu((prevItem) => !prevItem);
     };
 
     return (
-        <section className="flex items-center justify-between lg:px-[3rem] sm:px-[2rem] ssm:px-[2rem]  py-[2rem]">
+        <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            key={pathname}
+            className="flex items-center justify-between lg:px-[3rem] sm:px-[2rem] ssm:px-[2rem]  py-[2rem]"
+        >
             <Link href={"/"} className="flex items-center gap-4">
                 <Image src={"/logo.svg"} alt="logo" width={40} height={40} priority />
                 <h1 className="text-2xl tracking-wide sm:flex ssm:hidden font-medium">Promptify</h1>
@@ -84,7 +94,7 @@ const Navbar = () => {
                     <IoIosMenu className="text-4xl md:hidden flex relative" onClick={() => toggleMenu()} />
                 )}
             </AnimatePresence>
-        </section>
+        </motion.section>
     );
 };
 

@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { FaClipboard, FaTrash } from "react-icons/fa";
+import { CiTrash } from "react-icons/ci";
+import { IoClipboardOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const Card = () => {
     const [profilePost, setProfilePost] = useState([]);
@@ -29,16 +31,23 @@ const Card = () => {
     return (
         <>
             {profilePost.map((item, index) => (
-                <section className="flex flex-col items-start w-full bg-white/50 gap-8 rounded-md p-8">
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.6, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                    key={index}
+                    className="flex flex-col items-start w-full bg-white/50 gap-8 rounded-md p-8"
+                >
                     <h2 className=" text-start text-black/70">{item.prompt}</h2>
                     <div className="flex items-center justify-between w-full">
                         <h3 className=" cursor-pointer underline-offset-2 ">#{item.tag}</h3>
                         <div className="flex items-center gap-4">
-                            <FaClipboard className="text-lg cursor-pointer text-green-800 hover:scale-110 transition-all ease-in-out" />
-                            <FaTrash className="text-lg cursor-pointer text-red-500 hover:scale-110 transition-all ease-in-out" />
+                            <IoClipboardOutline className="text-xl cursor-pointer text-green-800 hover:scale-110 transition-all ease-in-out" />
+                            <CiTrash className="text-2xl cursor-pointer text-red-500 hover:scale-110 transition-all ease-in-out" />
                         </div>
                     </div>
-                </section>
+                </motion.section>
             ))}
         </>
     );

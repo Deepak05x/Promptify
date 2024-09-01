@@ -13,7 +13,7 @@ const session = await auth();
         }
         await connectToDb();            
         const posts = await Post.find({ user: session.user.id });
-        return NextResponse.json(posts);
+        return NextResponse.json(posts, {status: 200});
     } catch (error) {
         console.error('Error while fetching the posts:', error.message);
         return NextResponse.json({ error: 'Failed to fetch posts' }, { status: 500 });

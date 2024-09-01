@@ -1,5 +1,6 @@
 import  connectToDb  from "@/lib/db.js"
 import Post from "@/models/PostModel"
+import { NextResponse } from "next/server"
 
 export const POST = async(req)=>{
     const {user, prompt, tag} = await req.json()
@@ -13,10 +14,11 @@ export const POST = async(req)=>{
 
 
         await newPost.save()
-        return new Response(JSON.stringify(newPost), {status: 201})
+        return NextResponse.json( newPost, {status: 200})
     }catch(error){
         console.log(error.message)
-        return new Response(JSON.stringify({error: "A Error Occured"}), {status: 500})
+        return NextResponse.json({ error: "An Error Occurred" }, { status: 500 });
+
     }
 }
 

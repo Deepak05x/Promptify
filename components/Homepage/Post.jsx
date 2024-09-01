@@ -39,7 +39,7 @@ const Post = () => {
                     ))}
                 </section>
             ) : (
-                <h1 className="text-lg gradient">Sign In To See All The Posts</h1>
+                <></>
             )}
         </>
     );

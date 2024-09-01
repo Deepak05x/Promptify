@@ -6,6 +6,7 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { SessionContext } from "@/context/SessionProvider";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const Form = () => {
     const router = useRouter();
@@ -40,7 +41,11 @@ const Form = () => {
     };
 
     return (
-        <form
+        <motion.form
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.6, ease: "easeInOut" }}
+            viewport={{ once: true }}
             onSubmit={handleSubmit}
             className="w-full flex flex-col items-center border-[1px]  bg-white/50 justify-center rounded-lg xl:max-w-[50vw] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] ssm:max-w-[90vw] p-12 gap-12"
         >
@@ -69,7 +74,7 @@ const Form = () => {
                 />
             </div>
             <Button className="text-xl rounded-full">Submit</Button>
-        </form>
+        </motion.form>
     );
 };
 
