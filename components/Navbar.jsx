@@ -35,7 +35,13 @@ const Navbar = () => {
                 <h1 className="text-2xl tracking-wide sm:flex ssm:hidden font-medium">Promptify</h1>
             </Link>
             {session ? (
-                <div className="hidden items-center gap-8  md:flex">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                    className="hidden items-center gap-8  md:flex"
+                >
                     <Link href={"/create"}>
                         <Button className="text-lg p-4 rounded-full">Create Post</Button>
                     </Link>
@@ -53,13 +59,20 @@ const Navbar = () => {
                             className="rounded-full cursor-pointer hover:scale-110 transition-all ease-in-out"
                         />
                     </Link>
-                </div>
+                </motion.div>
             ) : (
-                <form action={doLogin} className="hidden md:flex">
+                <motion.form
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                    action={doLogin}
+                    className="hidden md:flex"
+                >
                     <Button name="action" value="google" type="submit" variant="outline" className="text-lg bg-white/50 p-4 rounded-full">
                         Sign In
                     </Button>
-                </form>
+                </motion.form>
             )}
             <AnimatePresence>
                 {menu ? (

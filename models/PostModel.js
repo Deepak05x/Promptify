@@ -6,7 +6,7 @@ const PostSchema = new Schema({
         required: true,
     },
     tag:{
-        type: String,
+        type: String,   
         required: true,
     },
     user:{
