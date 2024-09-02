@@ -37,7 +37,7 @@ const Card = () => {
                     transition={{ delay: 0.7, duration: 0.6, ease: "easeInOut" }}
                     viewport={{ once: true }}
                     key={index}
-                    className="flex flex-col items-start w-full bg-white/50 gap-8 rounded-md p-8"
+                    className="flex flex-col  justify-between items-start w-full bg-white/50 gap-8 rounded-md p-8"
                 >
                     <h2 className=" text-start text-black/70">{item.prompt}</h2>
                     <div className="flex items-center justify-between w-full">

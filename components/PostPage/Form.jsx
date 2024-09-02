@@ -40,6 +40,15 @@ const Form = () => {
         }
     };
 
+    const handleChange = (e) => {
+        const words = e.target.value.trim().split(/\s+/);
+        if (words.length <= 80) {
+            setPost({ ...post, prompt: e.target.value });
+        } else {
+            alert("You can only enter up to 60 words.");
+        }
+    };
+
     return (
         <motion.form
             initial={{ opacity: 0 }}
@@ -56,7 +65,7 @@ const Form = () => {
                 <Textarea
                     id="prompt"
                     value={post.prompt}
-                    onChange={(e) => setPost({ ...post, prompt: e.target.value })}
+                    onChange={handleChange}
                     placeholder="Share Your Prompts"
                     className="xl:max-w-[50vw] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] ssm:max-w-[90vw] border-black/20 border-[1px]"
                 />
