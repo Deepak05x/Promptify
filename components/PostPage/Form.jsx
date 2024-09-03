@@ -42,7 +42,7 @@ const Form = () => {
 
     const handleChange = (e) => {
         const words = e.target.value.trim().split(/\s+/);
-        if (words.length <= 80) {
+        if (words.length <= 60) {
             setPost({ ...post, prompt: e.target.value });
         } else {
             alert("You can only enter up to 60 words.");
