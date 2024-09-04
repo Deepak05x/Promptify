@@ -77,6 +77,7 @@ const Form = () => {
                 <Input
                     id="tag"
                     value={post.tag}
+                    a
                     onChange={(e) => setPost({ ...post, tag: e.target.value })}
                     placeholder="Enter Your Tag"
                     className=" text-md xl:max-w-[50vw] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] ssm:max-w-[90vw] border-black/20 border-[1px]"
