@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
+import { IoClipboardOutline } from "react-icons/io5";
+import { ToastContainer } from "react-toastify";
 
-const Card = ({ item }) => {
+const Card = ({ item, handleCopy }) => {
     return (
         <motion.section
             initial={{ opacity: 0 }}
@@ -21,7 +23,11 @@ const Card = ({ item }) => {
                 </div>
             </div>
             <h2 className=" text-start text-black/70">{item.prompt}</h2>
-            <h3 className=" cursor-pointer underline-offset-2 ">#{item.tag}</h3>
+            <div className="flex items-center w-full justify-between">
+                <h3 className=" cursor-pointer underline-offset-2 ">#{item.tag}</h3>
+                <ToastContainer />
+                <IoClipboardOutline className="text-xl cursor-pointer text-green-800 hover:scale-110 transition-all ease-in-out" onClick={() => handleCopy()} />
+            </div>
         </motion.section>
     );
 };
