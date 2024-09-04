@@ -95,7 +95,9 @@ const Navbar = () => {
                                 <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full bg-white/50">
                                     Sign out
                                 </Button>
-                                <Image src={session?.user?.image || "/cool_logo.png"} alt="profile" width={50} height={50} priority className="rounded-full" />
+                                <Link href={"/profile"} onClick={() => toggleMenu(false)}>
+                                    <Image src={session?.user?.image || "/cool_logo.png"} alt="profile" width={50} height={50} priority className="rounded-full" />
+                                </Link>
                             </div>
                         ) : (
                             <form action={doLogin} className="md:hidden flex">
