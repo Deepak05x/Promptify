@@ -5,7 +5,7 @@ import React from "react";
 
 const Title = () => {
     return (
-        <section className="flex flex-col gap-6 items-center px-4">
+        <section className="flex  flex-col gap-6 items-center px-4">
             <motion.h1
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

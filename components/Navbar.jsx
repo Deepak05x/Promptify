@@ -28,7 +28,7 @@ const Navbar = () => {
             transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
             viewport={{ once: true }}
             key={pathname}
-            className="flex items-center justify-between lg:px-[3rem] sm:px-[2rem] ssm:px-[2rem]  py-[2rem]"
+            className="flex items-center relative justify-between lg:px-[3rem] sm:px-[2rem] ssm:px-[2rem]  py-[2rem]"
         >
             <Link href={"/"} className="flex items-center gap-4">
                 <Image src={"/logo.svg"} alt="logo" width={40} height={40} priority />
@@ -78,17 +78,19 @@ const Navbar = () => {
                 {menu ? (
                     <motion.div
                         key="menu"
-                        initial={{ opacity: 0, x: 150 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 150 }}
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0 }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
-                        className="absolute bg-white flex flex-col items-center py-24 gap-12  ssm:w-[100vw] sm:w-[50vw] h-[100%] top-0 right-0"
+                        className="fixed rounded-[20px] z-30 backdrop-blur-3xl md:min-w-[60vw] sm:min-w-[80vw] ssm:min-w-[90vw] py-12 top-[30%] md:left-[20%] sm:left-[10%] ssm:left-[5%] flex flex-col items-center gap-16 translate-x-1/2 translate-y-1/2 bg-black/20"
                     >
                         <IoIosClose className="text-6xl " onClick={() => toggleMenu()} />
                         {session ? (
                             <div className="md:hidden items-center gap-12 flex-col  flex">
                                 <Link href={"/create"}>
-                                    <Button className="text-lg p-4 rounded-full">Create Post</Button>
+                                    <Button className="text-lg p-4 rounded-full" onClick={() => toggleMenu(false)}>
+                                        Create Post
+                                    </Button>
                                 </Link>
                                 <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full bg-white/50">
                                     Sign out
@@ -104,7 +106,7 @@ const Navbar = () => {
                         )}
                     </motion.div>
                 ) : (
-                    <IoIosMenu className="text-4xl md:hidden flex relative" onClick={() => toggleMenu()} />
+                    <IoIosMenu className="text-4xl md:hidden flex" onClick={() => toggleMenu()} />
                 )}
             </AnimatePresence>
         </motion.section>

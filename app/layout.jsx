@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${inter.className} min-h-screen w-full background_gradient`}>
+            <body className={`${inter.className} min-h-screen  w-full background_gradient`}>
                 <SessionProvider>
                     <Navbar />
                     {children}

@@ -10,7 +10,7 @@ const Card = ({ item, handleCopy }) => {
     return (
         <motion.section
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6, ease: "easeInOut" }}
             viewport={{ once: true }}
             className="flex flex-col items-start h-full justify-between w-full bg-white/50 gap-8 rounded-md p-8"

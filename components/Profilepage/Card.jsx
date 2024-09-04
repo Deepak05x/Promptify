@@ -68,7 +68,7 @@ const Card = () => {
             {profilePost.map((item, index) => (
                 <motion.section
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    animate={{ opacity: 1 }}
                     transition={{ delay: 0.7, duration: 0.6, ease: "easeInOut" }}
                     viewport={{ once: true }}
                     key={index}
