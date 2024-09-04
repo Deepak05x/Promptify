@@ -31,7 +31,7 @@ const Navbar = () => {
             className="flex items-center relative justify-between lg:px-[3rem] sm:px-[2rem] ssm:px-[2rem]  py-[2rem]"
         >
             <Link href={"/"} className="flex items-center gap-4">
-                <Image src={"/logo.svg"} alt="logo" width={40} height={40} priority />
+                <Image src={"/cool_logo.png"} alt="logo" width={50} height={50} priority className="h-[3rem] rounded-full" />
                 <h1 className="text-2xl tracking-wide sm:flex ssm:hidden font-medium">Promptify</h1>
             </Link>
             {session ? (
@@ -51,7 +51,7 @@ const Navbar = () => {
                     </Button>
                     <Link href={"/profile"}>
                         <Image
-                            src={session?.user?.image || "/logo.svg"}
+                            src={session?.user?.image || "/cool_logo.png"}
                             alt="profile"
                             width={50}
                             height={50}
@@ -95,7 +95,7 @@ const Navbar = () => {
                                 <Button onClick={handleLogOut} variant="outline" className="text-lg p-4 rounded-full bg-white/50">
                                     Sign out
                                 </Button>
-                                <Image src={session?.user?.image || "/logo.svg"} alt="profile" width={50} height={50} priority className="rounded-full" />
+                                <Image src={session?.user?.image || "/cool_logo.png"} alt="profile" width={50} height={50} priority className="rounded-full" />
                             </div>
                         ) : (
                             <form action={doLogin} className="md:hidden flex">
