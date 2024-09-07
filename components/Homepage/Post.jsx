@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import { SessionContext } from "@/context/SessionProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Protest_Strike } from "next/font/google";
 
 const Card = dynamic(() => import("@/components/Homepage/Card.jsx"));
 
