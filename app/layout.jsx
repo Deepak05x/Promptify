@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Promptify Website",
-    description: "Share Your Valuable Prompts",
+    description: "Share Your Valuable Prompts With Others",
 };
 
 export default function RootLayout({ children }) {

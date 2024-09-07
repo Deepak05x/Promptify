@@ -83,7 +83,6 @@ const Card = () => {
                             <CiTrash className="text-2xl cursor-pointer text-red-500 hover:scale-110 transition-all ease-in-out" onClick={() => handleDelete(item._id)} />
                         </div>
                     </div>
-                    <></>
                 </motion.section>
             ))}
         </>
