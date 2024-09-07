@@ -30,6 +30,8 @@ const Post = ({ query }) => {
         }
     };
 
+    console.log(posts);
+
     const handleCopy = (prompt) => {
         navigator.clipboard
             .writeText(prompt)
@@ -60,13 +62,13 @@ const Post = ({ query }) => {
         } else {
             setFiltered(posts);
         }
-    }, [query, posts]);
+    }, [query]);
 
     return (
         <>
             {session ? (
                 <section className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 w-full items-center justify-center gap-8 ssm:px-4 sm:px-8">
-                    {filtered.map((item, index) => (
+                    {posts.map((item, index) => (
                         <Card key={index} item={item} handleCopy={() => handleCopy(item.prompt)} />
                     ))}
                 </section>
